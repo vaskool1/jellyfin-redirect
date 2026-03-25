@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=about:blank">
+  <title>Jellyfin</title>
+  <style>
+    body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #101010; color: #ccc; }
+    a { color: #00a4dc; }
+  </style>
+</head>
+<body>
+  <p>Tunnel not yet active. <a id="link" href="#">Click here if not redirected.</a></p>
+  <script>
+    const url = document.querySelector('meta[http-equiv="refresh"]').content.split('url=')[1];
+    if (url && url !== 'about:blank') {
+      document.getElementById('link').href = url;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
